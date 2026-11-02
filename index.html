@@ -1,0 +1,324 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#b91c2b">
+<title>ANIRBAN BLOOD Network</title>
+<meta name="description" content="ANIRBAN BLOOD Network - রক্তের প্রয়োজনে, মানবতার বন্ধনে।">
+<style>
+:root {
+  --red:#c51e32;
+  --dark:#202b3c;
+  --light:#fff5f5;
+  --muted:#697586;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:#fff;color:var(--dark);line-height:1.6;
+}
+a{text-decoration:none;color:inherit}
+header{
+  position:sticky;top:0;z-index:10;
+  background:#fff;border-bottom:1px solid #eee;
+}
+.nav{
+  max-width:1150px;margin:auto;padding:14px 20px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800}
+.logo{
+  width:43px;height:43px;border-radius:13px;
+  background:var(--red);color:white;
+  display:grid;place-items:center;font-size:25px;
+}
+.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:1px}
+nav{display:flex;align-items:center;gap:22px;font-size:14px}
+nav a:hover{color:var(--red)}
+.btn{
+  display:inline-block;padding:12px 19px;border-radius:9px;
+  background:var(--red);color:#fff;font-weight:700;border:0;
+  cursor:pointer;font-size:14px;
+}
+.btn-outline{background:white;color:var(--red);border:1px solid var(--red)}
+.menu{display:none;background:none;border:0;font-size:25px}
+.hero{
+  background:linear-gradient(120deg,#fff3f3,#fff 65%);
+  padding:75px 20px 65px;
+}
+.hero-inner{
+  max-width:1100px;margin:auto;display:grid;
+  grid-template-columns:1.2fr .8fr;align-items:center;gap:35px;
+}
+.tag{
+  display:inline-block;background:#ffe3e5;color:var(--red);
+  padding:6px 13px;border-radius:30px;font-size:12px;font-weight:700;
+}
+h1{font-size:clamp(35px,5vw,57px);line-height:1.2;margin:20px 0}
+h1 span{color:var(--red)}
+.hero p{color:var(--muted);max-width:540px;margin-bottom:25px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.heart{
+  background:white;border:1px solid #f4d5d8;border-radius:28px;
+  min-height:260px;display:grid;place-items:center;
+  box-shadow:0 15px 45px #c51e3215;
+}
+.heart-icon{font-size:115px;color:var(--red)}
+.section{padding:65px 20px}
+.container{max-width:1100px;margin:auto}
+.section-title{text-align:center;margin-bottom:35px}
+.section-title h2{font-size:30px;margin-bottom:8px}
+.section-title p{color:var(--muted)}
+.stats{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:16px;margin-top:-5px;
+}
+.stat{
+  text-align:center;background:#fff;padding:23px 12px;
+  border:1px solid #eee;border-radius:13px;
+}
+.stat strong{display:block;color:var(--red);font-size:29px}
+.stat span{font-size:13px;color:var(--muted)}
+.search-section{background:#fff7f7}
+.search-box{
+  max-width:800px;margin:auto;background:#fff;padding:27px;
+  border-radius:16px;box-shadow:0 8px 30px #00000008;
+}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+label{font-size:13px;font-weight:700;display:block;margin-bottom:6px}
+input,select,textarea{
+  width:100%;padding:13px;border:1px solid #ddd;
+  border-radius:8px;background:#fff;font:inherit;font-size:14px;
+}
+.form-grid .full{grid-column:1/-1}
+.search-box .btn{width:100%;margin-top:18px}
+.notice{font-size:12px;color:var(--muted);margin-top:12px}
+.cards{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
+}
+.card{
+  border:1px solid #eee;border-radius:14px;padding:24px;
+  background:white;
+}
+.card-icon{
+  width:48px;height:48px;background:#ffe9eb;
+  color:var(--red);border-radius:12px;
+  display:grid;place-items:center;font-size:24px;margin-bottom:15px;
+}
+.card h3{margin-bottom:8px}
+.card p{font-size:14px;color:var(--muted);margin-bottom:17px}
+.callout{
+  background:var(--red);color:#fff;border-radius:18px;
+  padding:40px;text-align:center;
+}
+.callout p{margin:10px 0 22px;color:#ffe8e9}
+.callout .btn{background:white;color:var(--red)}
+footer{background:#202b3c;color:#fff;padding:42px 20px 20px}
+.footer-inner{
+  max-width:1100px;margin:auto;display:grid;
+  grid-template-columns:2fr 1fr 1fr;gap:30px;
+}
+footer p,footer a{font-size:13px;color:#c5ccd6}
+footer h3{margin-bottom:12px}
+footer a{display:block;margin:7px 0}
+.copyright{
+  max-width:1100px;margin:30px auto 0;padding-top:18px;
+  border-top:1px solid #ffffff25;text-align:center;
+  font-size:12px;color:#c5ccd6;
+}
+@media(max-width:700px){
+  nav{
+    display:none;position:absolute;top:70px;left:0;right:0;
+    background:white;padding:20px;flex-direction:column;
+    border-bottom:1px solid #eee;
+  }
+  nav.open{display:flex}
+  .menu{display:block}
+  .hero{padding:48px 20px}
+  .hero-inner{grid-template-columns:1fr}
+  .heart{min-height:175px}
+  .heart-icon{font-size:85px}
+  .stats{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr}
+  .form-grid{grid-template-columns:1fr}
+  .form-grid .full{grid-column:auto}
+  .footer-inner{grid-template-columns:1fr}
+  .callout{padding:30px 18px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="#">
+      <div class="logo">♥</div>
+      <div>
+        ANIRBAN BLOOD
+        <small>DONOR NETWORK</small>
+      </div>
+    </a>
+    <nav id="nav">
+      <a href="#home">হোম</a>
+      <a href="#search">রক্তদাতা খুঁজুন</a>
+      <a href="#services">আমাদের সেবা</a>
+      <a href="#about">পরিচিতি</a>
+      <a href="#register" class="btn">রক্তদাতা হোন</a>
+    </nav>
+    <button class="menu" onclick="document.getElementById('nav').classList.toggle('open')" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div>
+      <span class="tag">❤️ মানবতার সেবায় ডিজিটাল উদ্যোগ</span>
+      <h1>রক্তের প্রয়োজনে,<br><span>মানবতার বন্ধনে।</span></h1>
+      <p>
+        আপনার স্বেচ্ছায় রক্তদান হতে পারে কারও নতুন জীবনের আশা।
+        রক্তদাতা হোন, মানুষের পাশে দাঁড়ান।
+      </p>
+      <div class="actions">
+        <a href="#search" class="btn">রক্তদাতা খুঁজুন</a>
+        <a href="#register" class="btn btn-outline">রক্তদাতা হিসেবে যুক্ত হোন</a>
+      </div>
+    </div>
+    <div class="heart">
+      <div class="heart-icon">♥</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <h2>আমাদের নেটওয়ার্ক</h2>
+      <p>একটি স্বেচ্ছাসেবী রক্তদাতা নেটওয়ার্ক গড়ে তোলার প্রত্যয়।</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><strong>০</strong><span>নিবন্ধিত রক্তদাতা</span></div>
+      <div class="stat"><strong>০</strong><span>সম্পন্ন রক্তদান</span></div>
+      <div class="stat"><strong>০</strong><span>সহায়তাপ্রাপ্ত অনুরোধ</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section search-section" id="search">
+  <div class="container">
+    <div class="section-title">
+      <h2>রক্তদাতা অনুসন্ধান</h2>
+      <p>আপনার প্রয়োজনীয় রক্তের গ্রুপ নির্বাচন করুন।</p>
+    </div>
+    <div class="search-box">
+      <div class="form-grid">
+        <div>
+          <label for="blood">রক্তের গ্রুপ</label>
+          <select id="blood">
+            <option value="">রক্তের গ্রুপ নির্বাচন করুন</option>
+            <option>A+</option><option>A-</option>
+            <option>B+</option><option>B-</option>
+            <option>AB+</option><option>AB-</option>
+            <option>O+</option><option>O-</option>
+          </select>
+        </div>
+        <div>
+          <label for="district">জেলা</label>
+          <input id="district" placeholder="জেলার নাম লিখুন">
+        </div>
+        <div class="full">
+          <label for="upazila">উপজেলা</label>
+          <input id="upazila" placeholder="উপজেলার নাম লিখুন">
+        </div>
+      </div>
+      <button class="btn" onclick="alert('দাতা অনুসন্ধান চালু করতে ডেটাবেজ সংযুক্তির কাজ প্রয়োজন।')">
+        রক্তদাতা খুঁজুন
+      </button>
+      <p class="notice">অনুসন্ধান ব্যবস্থা চালু করতে পরবর্তী পর্যায়ে নিরাপদ ডেটাবেজ সংযুক্ত করা হবে।</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-title">
+      <h2>আমাদের সেবাসমূহ</h2>
+      <p>প্রযুক্তির মাধ্যমে রক্তদাতা ও রক্তপ্রার্থীর সংযোগ।</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">🩸</div>
+        <h3>রক্তদাতা অনুসন্ধান</h3>
+        <p>রক্তের গ্রুপ ও অবস্থান অনুযায়ী দাতা খোঁজার সুবিধা।</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📋</div>
+        <h3>দাতা নিবন্ধন</h3>
+        <p>স্বেচ্ছায় রক্তদাতা হিসেবে নেটওয়ার্কে যুক্ত হওয়ার সুযোগ।</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🚨</div>
+        <h3>জরুরি রক্তের অনুরোধ</h3>
+        <p>জরুরি প্রয়োজনে রক্তের অনুরোধ ব্যবস্থাপনার ব্যবস্থা।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="register">
+  <div class="container">
+    <div class="callout">
+      <h2>আপনিও হতে পারেন একজন জীবনরক্ষাকারী</h2>
+      <p>স্বেচ্ছায় রক্তদাতা হিসেবে যুক্ত হয়ে মানবতার পাশে দাঁড়ান।</p>
+      <a href="mailto:anirbanfoundation91@gmail.com?subject=Blood%20Donor%20Registration" class="btn">
+        নিবন্ধনে যোগাযোগ করুন
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-title">
+      <h2>ANIRBAN BLOOD Network সম্পর্কে</h2>
+      <p>
+        অনির্বাণ ফাউন্ডেশনের একটি মানবিক ডিজিটাল উদ্যোগ।
+        স্বেচ্ছায় রক্তদাতা ও রক্তের প্রয়োজনে থাকা মানুষের মধ্যে
+        নির্ভরযোগ্য সংযোগ গড়ে তোলাই আমাদের লক্ষ্য।
+      </p>
+      <br>
+      <strong>পরিচালনায়: অনির্বাণ ফাউন্ডেশন</strong>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h3>ANIRBAN BLOOD Network</h3>
+      <p>রক্তের প্রয়োজনে, মানবতার বন্ধনে।</p>
+      <p>একটি উদ্যোগ — অনির্বাণ ফাউন্ডেশন।</p>
+    </div>
+    <div>
+      <h3>গুরুত্বপূর্ণ লিংক</h3>
+      <a href="#home">হোম</a>
+      <a href="#search">রক্তদাতা খুঁজুন</a>
+      <a href="#register">রক্তদাতা হোন</a>
+    </div>
+    <div>
+      <h3>যোগাযোগ</h3>
+      <a href="mailto:anirbanfoundation91@gmail.com">ইমেইল করুন</a>
+      <a href="https://facebook.com/anirbanfoundation26">Facebook</a>
+      <a href="https://anirbanfoundation.github.io">Foundation Website</a>
+    </div>
+  </div>
+  <div class="copyright">
+    © 2026 ANIRBAN BLOOD Network. All Rights Reserved.
+  </div>
+</footer>
+
+</body>
+</html>
