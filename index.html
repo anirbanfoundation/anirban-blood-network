@@ -402,6 +402,61 @@ footer a{display:block;margin:7px 0}
 
   console.log("ANIRBAN BLOOD Network: Supabase client initialized");
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("donorRegistrationForm");
 
+  if (!form) return;
+
+  form.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const message = document.getElementById("registrationMessage");
+    const submitButton = form.querySelector('button[type="submit"]');
+
+    const donor = {
+      full_name: document.getElementById("full_name").value.trim(),
+      blood_group: document.getElementById("blood_group").value,
+      district: document.getElementById("district").value.trim(),
+      upazila: document.getElementById("upazila").value.trim(),
+      phone: document.getElementById("phone").value.trim(),
+      last_donation_date:
+        document.getElementById("last_donation_date").value || null,
+      available_to_donate:
+        document.getElementById("available_to_donate").checked,
+      public_contact_consent:
+        document.getElementById("public_contact_consent").checked,
+      consent: document.getElementById("consent").checked,
+      status: "pending"
+    };
+
+    submitButton.disabled = true;
+    message.textContent = "আপনার তথ্য জমা হচ্ছে...";
+
+    try {
+      const { error } = await supabaseClient
+        .from("donors")
+        .insert([donor]);
+
+      if (error) throw error;
+
+      message.textContent =
+        "ধন্যবাদ! আপনার নিবন্ধন জমা হয়েছে। যাচাই শেষে অনুমোদন দেওয়া হবে।";
+
+      form.reset();
+
+    } catch (error) {
+      console.error("Donor registration error:", error);
+      message.textContent =
+        error.code === "23505"
+          ? "এই মোবাইল নম্বর দিয়ে আগে নিবন্ধন করা হয়েছে।"
+          : "দুঃখিত! নিবন্ধন জমা হয়নি। অনুগ্রহ করে আবার চেষ্টা করুন।";
+
+    } finally {
+      submitButton.disabled = false;
+    }
+  });
+});
+</script>
 </body>
 </html>
