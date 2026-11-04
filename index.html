@@ -1,462 +1,384 @@
-
 <!DOCTYPE html>
 <html lang="bn">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#b91c2b">
-<title>ANIRBAN BLOOD Network</title>
-<meta name="description" content="ANIRBAN BLOOD Network - রক্তের প্রয়োজনে, মানবতার বন্ধনে।">
+<meta name="theme-color" content="#101a2b">
+<title>ANIRBAN BLOOD Network | রক্তের প্রয়োজনে, মানবতার বন্ধনে</title>
+<meta name="description" content="ANIRBAN BLOOD Network — স্বেচ্ছায় রক্তদাতা ও রক্তপ্রার্থীর মধ্যে নির্ভরযোগ্য সংযোগ গড়ে তোলার মানবিক উদ্যোগ।">
 <style>
-:root {
-  --red:#c51e32;
-  --dark:#202b3c;
-  --light:#fff5f5;
-  --muted:#697586;
+:root{
+  --navy:#101a2b;--navy2:#17253b;--red:#c51e32;--red2:#e33148;
+  --ink:#1b2638;--muted:#6c7788;--soft:#fff4f5;--line:#e9edf2;
+  --white:#fff;--green:#167447;--shadow:0 18px 55px rgba(16,26,43,.09)
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  background:#fff;color:var(--dark);line-height:1.6;
-}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);line-height:1.65;background:#fff}
 a{text-decoration:none;color:inherit}
-header{
-  position:sticky;top:0;z-index:10;
-  background:#fff;border-bottom:1px solid #eee;
-}
-.nav{
-  max-width:1150px;margin:auto;padding:14px 20px;
-  display:flex;align-items:center;justify-content:space-between;
-}
-.brand{display:flex;align-items:center;gap:10px;font-weight:800}
-.logo{
-  width:43px;height:43px;border-radius:13px;
-  background:var(--red);color:white;
-  display:grid;place-items:center;font-size:25px;
-}
-.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:1px}
-nav{display:flex;align-items:center;gap:22px;font-size:14px}
+button,input,select{font:inherit}
+.container{width:min(1160px,calc(100% - 40px));margin-inline:auto}
+.topbar{background:var(--navy);color:#d7deea;font-size:12px}
+.topbar-inner{display:flex;justify-content:space-between;gap:12px;padding:8px 0}
+.topbar a{color:#fff}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(233,237,242,.9)}
+.nav-wrap{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:.2px;white-space:nowrap}
+.brand-mark{height:44px;width:44px;border-radius:14px;background:linear-gradient(145deg,var(--red2),#a81025);color:#fff;display:grid;place-items:center;font-size:24px;box-shadow:0 8px 18px #c51e3230}
+.brand-name{font-size:16px;line-height:1.15;color:var(--navy)}
+.brand-name small{display:block;color:#8791a0;font-size:9px;letter-spacing:2px;margin-top:5px}
+nav{display:flex;align-items:center;gap:25px;font-size:13px;font-weight:700;color:#465267}
 nav a:hover{color:var(--red)}
-.btn{
-  display:inline-block;padding:12px 19px;border-radius:9px;
-  background:var(--red);color:#fff;font-weight:700;border:0;
-  cursor:pointer;font-size:14px;
-}
-.btn-outline{background:white;color:var(--red);border:1px solid var(--red)}
-.menu{display:none;background:none;border:0;font-size:25px}
-.hero{
-  background:linear-gradient(120deg,#fff3f3,#fff 65%);
-  padding:75px 20px 65px;
-}
-.hero-inner{
-  max-width:1100px;margin:auto;display:grid;
-  grid-template-columns:1.2fr .8fr;align-items:center;gap:35px;
-}
-.tag{
-  display:inline-block;background:#ffe3e5;color:var(--red);
-  padding:6px 13px;border-radius:30px;font-size:12px;font-weight:700;
-}
-h1{font-size:clamp(35px,5vw,57px);line-height:1.2;margin:20px 0}
-h1 span{color:var(--red)}
-.hero p{color:var(--muted);max-width:540px;margin-bottom:25px}
-.actions{display:flex;flex-wrap:wrap;gap:12px}
-.heart{
-  background:white;border:1px solid #f4d5d8;border-radius:28px;
-  min-height:260px;display:grid;place-items:center;
-  box-shadow:0 15px 45px #c51e3215;
-}
-.heart-icon{font-size:115px;color:var(--red)}
-.section{padding:65px 20px}
-.container{max-width:1100px;margin:auto}
-.section-title{text-align:center;margin-bottom:35px}
-.section-title h2{font-size:30px;margin-bottom:8px}
-.section-title p{color:var(--muted)}
-.stats{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:16px;margin-top:-5px;
-}
-.stat{
-  text-align:center;background:#fff;padding:23px 12px;
-  border:1px solid #eee;border-radius:13px;
-}
-.stat strong{display:block;color:var(--red);font-size:29px}
-.stat span{font-size:13px;color:var(--muted)}
-.search-section{background:#fff7f7}
-.search-box{
-  max-width:800px;margin:auto;background:#fff;padding:27px;
-  border-radius:16px;box-shadow:0 8px 30px #00000008;
-}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
-label{font-size:13px;font-weight:700;display:block;margin-bottom:6px}
-input,select,textarea{
-  width:100%;padding:13px;border:1px solid #ddd;
-  border-radius:8px;background:#fff;font:inherit;font-size:14px;
-}
-.form-grid .full{grid-column:1/-1}
-.search-box .btn{width:100%;margin-top:18px}
-.notice{font-size:12px;color:var(--muted);margin-top:12px}
-.cards{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
-}
-.card{
-  border:1px solid #eee;border-radius:14px;padding:24px;
-  background:white;
-}
-.card-icon{
-  width:48px;height:48px;background:#ffe9eb;
-  color:var(--red);border-radius:12px;
-  display:grid;place-items:center;font-size:24px;margin-bottom:15px;
-}
-.card h3{margin-bottom:8px}
-.card p{font-size:14px;color:var(--muted);margin-bottom:17px}
-.callout{
-  background:var(--red);color:#fff;border-radius:18px;
-  padding:40px;text-align:center;
-}
-.callout p{margin:10px 0 22px;color:#ffe8e9}
-.callout .btn{background:white;color:var(--red)}
-footer{background:#202b3c;color:#fff;padding:42px 20px 20px}
-.footer-inner{
-  max-width:1100px;margin:auto;display:grid;
-  grid-template-columns:2fr 1fr 1fr;gap:30px;
-}
-footer p,footer a{font-size:13px;color:#c5ccd6}
-footer h3{margin-bottom:12px}
-footer a{display:block;margin:7px 0}
-.copyright{
-  max-width:1100px;margin:30px auto 0;padding-top:18px;
-  border-top:1px solid #ffffff25;text-align:center;
-  font-size:12px;color:#c5ccd6;
+.nav-actions{display:flex;align-items:center;gap:10px}
+.menu-btn{display:none;border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 11px;font-size:22px;color:var(--navy)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 19px;border-radius:10px;background:var(--red);color:#fff;border:1px solid var(--red);font-weight:800;font-size:13px;cursor:pointer;transition:.2s}
+.btn:hover{background:#a91529;transform:translateY(-1px)}
+.btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.btn-light{background:#fff;color:var(--red);border-color:#fff}
+.btn-light:hover{background:#fff0f2;color:#a91529}
+.btn-outline{background:transparent;color:var(--navy);border-color:#cbd2dc}
+.btn-outline:hover{background:#f6f8fb;color:var(--red);border-color:var(--red)}
+.hero{position:relative;overflow:hidden;background:radial-gradient(circle at 82% 22%,#293c5b 0,transparent 28%),linear-gradient(120deg,#101a2b,#17263e 68%,#202f49);color:#fff;padding:84px 0 76px}
+.hero:before,.hero:after{content:"";position:absolute;border:1px solid rgba(255,255,255,.08);border-radius:50%;pointer-events:none}
+.hero:before{width:520px;height:520px;right:-150px;top:-220px}
+.hero:after{width:370px;height:370px;right:-70px;top:-145px}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.12fr .88fr;align-items:center;gap:55px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid #ffffff30;background:#ffffff0d;color:#ffe2e6;padding:7px 13px;border-radius:30px;font-size:11px;font-weight:800;letter-spacing:.4px}
+.eyebrow i{height:7px;width:7px;background:#ff6375;border-radius:50%;box-shadow:0 0 0 5px #ff63751f}
+.hero h1{font-size:clamp(38px,5.4vw,66px);line-height:1.17;letter-spacing:-1.5px;margin:23px 0 18px;font-weight:900}
+.hero h1 span{color:#ff6b7c}
+.hero-copy{max-width:560px;color:#c3ccda;font-size:15px;line-height:1.9}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:29px}
+.hero .btn-outline{color:#fff;border-color:#ffffff50}
+.hero .btn-outline:hover{background:#ffffff12;border-color:#fff}
+.hero-note{display:flex;align-items:center;gap:11px;margin-top:28px;color:#b7c2d2;font-size:12px}
+.avatar-stack{display:flex;padding-left:5px}
+.avatar-stack span{height:27px;width:27px;border-radius:50%;border:2px solid var(--navy2);background:#f2c4ca;color:#8d1d30;display:grid;place-items:center;font-size:10px;font-weight:900;margin-left:-6px}
+.hero-visual{min-height:370px;display:grid;place-items:center;position:relative}
+.orbit{height:320px;width:320px;border-radius:50%;border:1px solid #ffffff25;display:grid;place-items:center;position:relative;background:radial-gradient(circle,#ffffff0d 0 40%,transparent 41%)}
+.orbit:before,.orbit:after{content:"";position:absolute;border:1px dashed #ffffff25;border-radius:50%}
+.orbit:before{inset:25px}.orbit:after{inset:58px}
+.heart-core{height:174px;width:174px;border-radius:44px;background:linear-gradient(145deg,#ed4057,#b71029);display:grid;place-items:center;font-size:91px;color:#fff;transform:rotate(-8deg);box-shadow:0 25px 65px #c51e3250;position:relative;z-index:1}
+.float-card{position:absolute;z-index:2;background:#fff;color:var(--navy);padding:13px 16px;border-radius:13px;box-shadow:0 15px 40px #0003;font-size:11px;font-weight:800}
+.float-card strong{display:block;font-size:17px;color:var(--red)}
+.float-one{top:38px;right:-2px}.float-two{bottom:36px;left:-6px}
+.float-icon{display:inline-grid;place-items:center;height:29px;width:29px;border-radius:9px;background:#fff0f2;color:var(--red);margin-right:7px;vertical-align:middle;font-size:15px}
+.trust-strip{background:#fff;border-bottom:1px solid var(--line)}
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);padding:21px 0}
+.trust-item{display:flex;align-items:center;justify-content:center;gap:12px;border-right:1px solid var(--line)}
+.trust-item:last-child{border:0}
+.trust-icon{height:39px;width:39px;border-radius:12px;background:var(--soft);color:var(--red);display:grid;place-items:center;font-size:18px}
+.trust-item strong{display:block;font-size:12px}.trust-item small{display:block;color:var(--muted);font-size:10px}
+.section{padding:78px 0}
+.section-soft{background:#f8fafc}
+.section-head{text-align:center;max-width:660px;margin:0 auto 38px}
+.kicker{color:var(--red);font-size:11px;font-weight:900;letter-spacing:1.6px;text-transform:uppercase}
+.section-head h2{font-size:clamp(26px,3vw,37px);line-height:1.25;margin:9px 0 10px;color:var(--navy);letter-spacing:-.5px}
+.section-head p{font-size:14px;color:var(--muted)}
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.stat-card{padding:24px;border:1px solid var(--line);border-radius:16px;background:#fff;text-align:center}
+.stat-number{font-size:32px;font-weight:900;color:var(--red);line-height:1.2}
+.stat-card p{font-size:12px;color:var(--muted);margin-top:7px}
+.search-section{background:linear-gradient(180deg,#fff5f6,#fff)}
+.search-panel{max-width:900px;margin:auto;background:#fff;border:1px solid #f1dfe2;border-radius:20px;padding:28px;box-shadow:var(--shadow)}
+.search-fields{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:13px;align-items:end}
+.field label{display:block;font-size:12px;font-weight:800;margin-bottom:7px;color:#3b4658}
+.field input,.field select{width:100%;height:47px;border:1px solid #dfe4eb;border-radius:9px;padding:0 12px;background:#fff;color:var(--ink);font-size:13px;outline:none}
+.field input:focus,.field select:focus{border-color:var(--red);box-shadow:0 0 0 3px #c51e3212}
+.search-fields .btn{height:47px;white-space:nowrap}
+.helper{font-size:11px;color:var(--muted);margin-top:14px}
+.message{font-size:13px;font-weight:700;margin-top:15px;min-height:22px}
+.results{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px}
+.result-card{border:1px solid var(--line);border-radius:13px;padding:17px;background:#fff}
+.result-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.blood-pill{background:#fff0f2;color:var(--red);border-radius:9px;padding:5px 10px;font-weight:900;font-size:13px}
+.result-card h3{font-size:15px;margin:10px 0 4px}
+.result-card p{font-size:12px;color:var(--muted)}
+.result-card a{display:inline-flex;color:var(--red);font-weight:800;font-size:12px;margin-top:10px}
+.steps-grid,.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.step-card,.service-card{border:1px solid var(--line);border-radius:16px;padding:25px;background:#fff;position:relative}
+.step-num{font-size:11px;font-weight:900;color:#d2d8e1;letter-spacing:1px}
+.step-icon,.service-icon{height:48px;width:48px;border-radius:14px;background:#fff0f2;color:var(--red);display:grid;place-items:center;font-size:22px;margin:15px 0}
+.step-card h3,.service-card h3{font-size:16px;margin-bottom:7px}
+.step-card p,.service-card p{font-size:12px;color:var(--muted)}
+.service-card{transition:.2s}.service-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#f1cbd1}
+.service-card a{display:inline-flex;color:var(--red);font-size:12px;font-weight:900;margin-top:15px}
+.cta-band{background:linear-gradient(120deg,#b9152b,#df3048);border-radius:22px;padding:42px;display:flex;align-items:center;justify-content:space-between;gap:25px;color:#fff;overflow:hidden;position:relative}
+.cta-band:after{content:"♥";position:absolute;right:27%;font-size:180px;color:#ffffff0d;line-height:1}
+.cta-band h2{font-size:clamp(24px,3vw,34px);line-height:1.25;position:relative;z-index:1}
+.cta-band p{color:#ffe0e4;font-size:13px;margin-top:9px;position:relative;z-index:1}
+.cta-band .btn{background:#fff;color:var(--red);border-color:#fff;position:relative;z-index:1;white-space:nowrap}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.about-visual{min-height:285px;border-radius:20px;background:linear-gradient(145deg,#18263d,#263b5a);display:grid;place-items:center;color:#fff;position:relative;overflow:hidden}
+.about-visual:before{content:"";position:absolute;width:260px;height:260px;border:1px solid #ffffff25;border-radius:50%}
+.about-visual span{font-size:105px;color:#ff6b7c;z-index:1}
+.about-copy h2{font-size:30px;line-height:1.25;color:var(--navy);margin:10px 0 14px}
+.about-copy p{font-size:13px;color:var(--muted);margin-bottom:15px}
+.values{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+.value{font-size:12px;font-weight:800;display:flex;gap:8px;align-items:center}.value b{color:var(--green)}
+.faq-list{max-width:800px;margin:auto;display:grid;gap:10px}
+details{border:1px solid var(--line);border-radius:12px;padding:15px 18px;background:#fff}
+summary{cursor:pointer;font-size:13px;font-weight:800;color:var(--navy)}
+details p{font-size:12px;color:var(--muted);padding-top:10px}
+.registration-wrap{max-width:760px;margin:auto;background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px;box-shadow:var(--shadow)}
+.registration-form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.registration-form .full{grid-column:1/-1}
+.registration-form input,.registration-form select{width:100%;height:46px;border:1px solid #dfe4eb;border-radius:9px;padding:0 12px;font-size:13px}
+.check-row{display:flex;align-items:flex-start;gap:9px;font-size:12px;color:#4c586b;grid-column:1/-1}
+.check-row input{width:16px;height:16px;flex:0 0 auto;margin-top:2px}
+.registration-form button{grid-column:1/-1}
+footer{background:var(--navy);color:#fff;padding:52px 0 20px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:35px}
+footer h3{font-size:14px;margin-bottom:12px}
+footer p,footer a{font-size:12px;color:#b9c4d3}
+footer a{display:block;margin:8px 0}footer a:hover{color:#fff}
+.footer-brand{font-size:18px;font-weight:900;margin-bottom:10px}
+.footer-bottom{border-top:1px solid #ffffff20;margin-top:32px;padding-top:17px;display:flex;justify-content:space-between;gap:15px;color:#9eacbf;font-size:10px}
+
+.mission-grid,.story-grid,.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.info-card,.story-card,.news-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:23px}
+.info-card .mini-icon{height:42px;width:42px;border-radius:12px;background:#fff0f2;color:var(--red);display:grid;place-items:center;font-size:19px;margin-bottom:14px}
+.info-card h3,.story-card h3,.news-card h3{font-size:15px;margin-bottom:8px;color:var(--navy)}
+.info-card p,.story-card p,.news-card p{font-size:12px;color:var(--muted)}
+.story-tag,.news-tag{display:inline-block;background:#fff0f2;color:var(--red);padding:4px 9px;border-radius:20px;font-size:10px;font-weight:900;margin-bottom:10px}
+.campaign-card{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff}
+.campaign-art{height:125px;background:linear-gradient(130deg,#17263e,#c51e32);display:grid;place-items:center;color:#fff;font-size:45px}
+.campaign-body{padding:19px}.campaign-body h3{font-size:15px;margin-bottom:7px}.campaign-body p{font-size:12px;color:var(--muted)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.contact-panel{padding:25px;border:1px solid var(--line);border-radius:16px;background:#fff}
+.contact-line{padding:12px 0;border-bottom:1px solid var(--line);font-size:13px}.contact-line:last-child{border:0}
+.policy-copy{max-width:850px;margin:auto;color:var(--muted);font-size:13px}
+.policy-copy h3{color:var(--navy);font-size:16px;margin:22px 0 7px}
+.policy-copy p{margin:8px 0}
+.notice-box{border-left:3px solid var(--red);background:#fff4f5;padding:14px 16px;border-radius:0 10px 10px 0;font-size:12px;color:#5c3440;margin-top:15px}
+@media(max-width:700px){.mission-grid,.story-grid,.news-grid,.contact-grid{grid-template-columns:1fr}}
+
+
+.nav-more{position:relative}
+.nav-more>button{border:0;background:transparent;color:#465267;font-size:13px;font-weight:800;cursor:pointer;padding:10px 2px}
+.nav-more>button:hover,.nav-more>button[aria-expanded="true"]{color:var(--red)}
+.nav-dropdown{display:none;position:absolute;top:calc(100% + 13px);right:0;min-width:225px;padding:8px;background:#fff;border:1px solid var(--line);border-radius:13px;box-shadow:0 16px 42px rgba(16,26,43,.15);z-index:40}
+.nav-more.open .nav-dropdown{display:block}
+.nav-dropdown a{display:block;padding:10px 12px;border-radius:8px;font-size:12px;white-space:nowrap}
+.nav-dropdown a:hover{background:#fff2f4}
+@media(max-width:1050px) and (min-width:701px){
+ .nav-wrap{gap:12px}nav{gap:12px}nav>a{font-size:11px}.nav-more>button{font-size:11px}
+ .brand-name{font-size:13px}.nav-actions .btn{padding:10px 12px;font-size:11px}
 }
 @media(max-width:700px){
-  nav{
-    display:none;position:absolute;top:70px;left:0;right:0;
-    background:white;padding:20px;flex-direction:column;
-    border-bottom:1px solid #eee;
-  }
-  nav.open{display:flex}
-  .menu{display:block}
-  .hero{padding:48px 20px}
-  .hero-inner{grid-template-columns:1fr}
-  .heart{min-height:175px}
-  .heart-icon{font-size:85px}
-  .stats{grid-template-columns:1fr}
-  .cards{grid-template-columns:1fr}
-  .form-grid{grid-template-columns:1fr}
-  .form-grid .full{grid-column:auto}
-  .footer-inner{grid-template-columns:1fr}
-  .callout{padding:30px 18px}
+ nav{max-height:calc(100vh - 76px);overflow-y:auto}
+ .nav-more>button{width:100%;text-align:left;padding:0;font-size:13px}
+ .nav-dropdown{position:static;box-shadow:none;border:0;border-left:2px solid #f3cbd1;border-radius:0;margin:7px 0 0 5px;padding:3px 0 3px 9px;min-width:0}
+ .nav-dropdown a{white-space:normal}
+}
+
+@media(max-width:900px){nav{gap:13px}.hero-grid{gap:25px}.search-fields{grid-template-columns:1fr 1fr}.search-fields .btn{grid-column:1/-1}.about-grid{gap:28px}}
+@media(max-width:700px){
+ .topbar-inner{justify-content:center}.topbar-inner span:last-child{display:none}
+ .nav-wrap{height:68px}.menu-btn{display:block}nav{display:none;position:absolute;top:68px;left:0;right:0;padding:18px 22px;background:#fff;border-bottom:1px solid var(--line);align-items:stretch;flex-direction:column;gap:16px}
+ nav.open{display:flex}.nav-actions .btn{display:none}
+ .hero{padding:55px 0 48px}.hero-grid{grid-template-columns:1fr}.hero-visual{min-height:275px}.orbit{height:250px;width:250px}.heart-core{height:135px;width:135px;font-size:70px}.float-one{right:0;top:10px}.float-two{left:0;bottom:5px}
+ .trust-grid{grid-template-columns:1fr;gap:13px;padding:17px 0}.trust-item{justify-content:flex-start;border:0}
+ .section{padding:58px 0}.stats-grid,.steps-grid,.services-grid{grid-template-columns:1fr}.search-panel{padding:18px}.search-fields,.results,.about-grid,.registration-form{grid-template-columns:1fr}.registration-form .full{grid-column:auto}
+ .cta-band{padding:28px 22px;display:block}.cta-band .btn{margin-top:20px}.about-visual{min-height:220px}.footer-grid{grid-template-columns:1fr;gap:22px}.footer-bottom{display:block}.footer-bottom span{display:block;margin-top:7px}
 }
 </style>
 </head>
 <body>
-
-<header>
-  <div class="nav">
-    <a class="brand" href="#">
-      <div class="logo">♥</div>
-      <div>
-        ANIRBAN BLOOD
-        <small>DONOR NETWORK</small>
-      </div>
-    </a>
-    <nav id="nav">
-      <a href="#home">হোম</a>
-      <a href="#search">রক্তদাতা খুঁজুন</a>
-      <a href="#services">আমাদের সেবা</a>
-      <a href="#about">পরিচিতি</a>
-      <a href="#register" class="btn">রক্তদাতা হোন</a>
-    </nav>
-    <button class="menu" onclick="document.getElementById('nav').classList.toggle('open')" aria-label="Menu">☰</button>
-  </div>
-</header>
-
+<div class="topbar"><div class="container topbar-inner"><span>🩸 মানবতার সেবায় একটি স্বেচ্ছাসেবী উদ্যোগ</span><span>পরিচালনায়: <a href="https://anirbanfoundation.github.io">অনির্বাণ ফাউন্ডেশন</a></span></div></div>
+<header><div class="container nav-wrap">
+<a class="brand" href="#home"><span class="brand-mark">♥</span><span class="brand-name">ANIRBAN BLOOD<small>DONOR NETWORK</small></span></a>
+<nav id="mainNav" aria-label="প্রধান নেভিগেশন">
+<a href="#home">হোম</a>
+<a href="#about">About Us</a>
+<a href="#mission">Mission & Vision</a>
+<a href="#services">Services</a>
+<a href="#search">Donor Search</a>
+<a href="#donor-registration">Registration</a>
+<div class="nav-more">
+<button type="button" id="moreButton" aria-expanded="false" aria-controls="moreMenu">আরও <span aria-hidden="true">⌄</span></button>
+<div class="nav-dropdown" id="moreMenu">
+<a href="#emergency">Emergency Request</a>
+<a href="#campaigns">Blood Donation Campaign</a>
+<a href="#stories">Success Stories</a>
+<a href="#updates">News & Updates</a>
+<a href="#contact">Contact Us</a>
+<a href="#faq">FAQ</a>
+<a href="#privacy">Privacy Policy</a>
+<a href="#terms">Terms & Conditions</a>
+</div>
+</div>
+</nav>
+<div class="nav-actions"><a class="btn" href="#donor-registration">রক্তদাতা হোন <span>↗</span></a><button class="menu-btn" id="menuButton" aria-label="মেনু খুলুন" aria-expanded="false">☰</button></div>
+</div></header>
 <main>
-<section class="hero" id="home">
-  <div class="hero-inner">
-    <div>
-      <span class="tag">❤️ মানবতার সেবায় ডিজিটাল উদ্যোগ</span>
-      <h1>রক্তের প্রয়োজনে,<br><span>মানবতার বন্ধনে।</span></h1>
-      <p>
-        আপনার স্বেচ্ছায় রক্তদান হতে পারে কারও নতুন জীবনের আশা।
-        রক্তদাতা হোন, মানুষের পাশে দাঁড়ান।
-      </p>
-      <div class="actions">
-        <a href="#search" class="btn">রক্তদাতা খুঁজুন</a>
-        <a href="#register" class="btn btn-outline">রক্তদাতা হিসেবে যুক্ত হোন</a>
-      </div>
-    </div>
-    <div class="heart">
-      <div class="heart-icon">♥</div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="section-title">
-      <h2>আমাদের নেটওয়ার্ক</h2>
-      <p>একটি স্বেচ্ছাসেবী রক্তদাতা নেটওয়ার্ক গড়ে তোলার প্রত্যয়।</p>
-    </div>
-    <div class="stats">
-      <div class="stat"><strong>০</strong><span>নিবন্ধিত রক্তদাতা</span></div>
-      <div class="stat"><strong>০</strong><span>সম্পন্ন রক্তদান</span></div>
-      <div class="stat"><strong>০</strong><span>সহায়তাপ্রাপ্ত অনুরোধ</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="section search-section" id="search">
-  <div class="container">
-    <div class="section-title">
-      <h2>রক্তদাতা অনুসন্ধান</h2>
-      <p>আপনার প্রয়োজনীয় রক্তের গ্রুপ নির্বাচন করুন।</p>
-    </div>
-    <div class="search-box">
-      <div class="form-grid">
-        <div>
-          <label for="blood">রক্তের গ্রুপ</label>
-          <select id="blood">
-            <option value="">রক্তের গ্রুপ নির্বাচন করুন</option>
-            <option>A+</option><option>A-</option>
-            <option>B+</option><option>B-</option>
-            <option>AB+</option><option>AB-</option>
-            <option>O+</option><option>O-</option>
-          </select>
-        </div>
-        <div>
-          <label for="district">জেলা</label>
-          <input id="district" placeholder="জেলার নাম লিখুন">
-        </div>
-        <div class="full">
-          <label for="upazila">উপজেলা</label>
-          <input id="upazila" placeholder="উপজেলার নাম লিখুন">
-        </div>
-      </div>
-      <button class="btn" onclick="alert('দাতা অনুসন্ধান চালু করতে ডেটাবেজ সংযুক্তির কাজ প্রয়োজন।')">
-        রক্তদাতা খুঁজুন
-      </button>
-      <p class="notice">অনুসন্ধান ব্যবস্থা চালু করতে পরবর্তী পর্যায়ে নিরাপদ ডেটাবেজ সংযুক্ত করা হবে।</p>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="services">
-  <div class="container">
-    <div class="section-title">
-      <h2>আমাদের সেবাসমূহ</h2>
-      <p>প্রযুক্তির মাধ্যমে রক্তদাতা ও রক্তপ্রার্থীর সংযোগ।</p>
-    </div>
-    <div class="cards">
-      <div class="card">
-        <div class="card-icon">🩸</div>
-        <h3>রক্তদাতা অনুসন্ধান</h3>
-        <p>রক্তের গ্রুপ ও অবস্থান অনুযায়ী দাতা খোঁজার সুবিধা।</p>
-      </div>
-      <div class="card">
-        <a href="#donor-registration" class="btn">রক্তদাতা হিসেবে নিবন্ধন করুন
-        </a>
-      <div class="card">
-        <div class="card-icon">🚨</div>
-        <h3>জরুরি রক্তের অনুরোধ</h3>
-        <p>জরুরি প্রয়োজনে রক্তের অনুরোধ ব্যবস্থাপনার ব্যবস্থা।</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="register">
-  <div class="container">
-    <div class="callout">
-      <h2>আপনিও হতে পারেন একজন জীবনরক্ষাকারী</h2>
-      <p>স্বেচ্ছায় রক্তদাতা হিসেবে যুক্ত হয়ে মানবতার পাশে দাঁড়ান।</p>
-      <a href="mailto:anirbanfoundation91@gmail.com?subject=Blood%20Donor%20Registration" class="btn">
-    নিবন্ধনে যোগাযোগ করুন
-</a>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="about">
-  <div class="container">
-    <div class="section-title">
-      <h2>ANIRBAN BLOOD Network সম্পর্কে</h2>
-      <p>
-        অনির্বাণ ফাউন্ডেশনের একটি মানবিক ডিজিটাল উদ্যোগ।
-        স্বেচ্ছায় রক্তদাতা ও রক্তের প্রয়োজনে থাকা মানুষের মধ্যে
-        নির্ভরযোগ্য সংযোগ গড়ে তোলাই আমাদের লক্ষ্য।
-      </p>
-      <br>
-      <strong>পরিচালনায়: অনির্বাণ ফাউন্ডেশন</strong>
-    </div>
-  </div>
-</section>
-  <section id="donor-registration" class="section">
-  <div class="container">
-    <div class="section-title">
-      <h2>রক্তদাতা নিবন্ধন</h2>
-      <p>আপনার তথ্য দিয়ে অনির্বাণ ব্লাড নেটওয়ার্কে যুক্ত হোন।</p>
-    </div>
-
-    <div class="card">
-      <form id="donorRegistrationForm">
-
-        <label for="full_name">পূর্ণ নাম *</label>
-        <input type="text" id="full_name" name="full_name"
-          placeholder="আপনার নাম লিখুন" required>
-
-        <label for="blood_group">রক্তের গ্রুপ *</label>
-        <select id="blood_group" name="blood_group" required>
-          <option value="">রক্তের গ্রুপ নির্বাচন করুন</option>
-          <option value="A+">A+</option>
-          <option value="A-">A-</option>
-          <option value="B+">B+</option>
-          <option value="B-">B-</option>
-          <option value="AB+">AB+</option>
-          <option value="AB-">AB-</option>
-          <option value="O+">O+</option>
-          <option value="O-">O-</option>
-        </select>
-
-        <label for="district">জেলা *</label>
-        <input type="text" id="district" name="district"
-          placeholder="আপনার জেলার নাম" required>
-
-        <label for="upazila">উপজেলা *</label>
-        <input type="text" id="upazila" name="upazila"
-          placeholder="আপনার উপজেলার নাম" required>
-
-        <label for="phone">মোবাইল নম্বর *</label>
-        <input type="tel" id="phone" name="phone"
-          placeholder="01XXXXXXXXX" required>
-
-        <label for="last_donation_date">সর্বশেষ রক্তদানের তারিখ</label>
-        <input type="date" id="last_donation_date"
-          name="last_donation_date">
-
-        <label>
-          <input type="checkbox" id="available_to_donate"
-            name="available_to_donate" checked>
-          বর্তমানে রক্ত দিতে আগ্রহী
-        </label>
-
-        <label>
-          <input type="checkbox" id="public_contact_consent"
-            name="public_contact_consent">
-          রক্তের প্রয়োজনে যাচাইকৃত ব্যক্তিদের সঙ্গে আমার মোবাইল নম্বর শেয়ার করতে সম্মতি দিচ্ছি।
-        </label>
-
-        <label>
-          <input type="checkbox" id="consent"
-            name="consent" required>
-          আমার দেওয়া তথ্য অনির্বাণ ব্লাড নেটওয়ার্কে সংরক্ষণ ও যাচাই করার অনুমতি দিচ্ছি। *
-        </label>
-
-        <button type="submit" class="btn">
-          নিবন্ধন সম্পন্ন করুন
-        </button>
-
-        <p id="registrationMessage" role="status"></p>
-      </form>
-    </div>
-  </div>
-</section>
+<section class="hero" id="home"><div class="container hero-grid">
+<div><span class="eyebrow"><i></i> মানবতার সেবায় ডিজিটাল উদ্যোগ</span>
+<h1>এক ফোঁটা রক্ত,<br><span>বাঁচাতে পারে একটি জীবন।</span></h1>
+<p class="hero-copy">রক্তের প্রয়োজনে, মানবতার বন্ধনে। স্বেচ্ছায় রক্তদাতা ও রক্তপ্রার্থীর মধ্যে নির্ভরযোগ্য সংযোগ গড়ে তুলতে কাজ করছে ANIRBAN BLOOD Network।</p>
+<div class="hero-actions"><a class="btn" href="#search">রক্তদাতা খুঁজুন <span>→</span></a><a class="btn btn-outline" href="#donor-registration">রক্তদাতা হিসেবে যুক্ত হোন</a></div>
+<div class="hero-note"><div class="avatar-stack"><span>♥</span><span>🩸</span><span>+</span></div><span>স্বেচ্ছায় রক্তদান • মানবিক সংযোগ • দায়িত্বশীল সেবা</span></div></div>
+<div class="hero-visual"><div class="orbit"><div class="heart-core">♥</div><div class="float-card float-one"><strong>২৪/৭</strong>মানবিক সহায়তার লক্ষ্য</div><div class="float-card float-two"><span class="float-icon">🩸</span>রক্তদাতা নেটওয়ার্ক</div></div></div>
+</div></section>
+<div class="trust-strip"><div class="container trust-grid">
+<div class="trust-item"><span class="trust-icon">✓</span><span><strong>যাচাইকৃত ডোনার</strong><small>অনুমোদনের পর তালিকাভুক্তি</small></span></div>
+<div class="trust-item"><span class="trust-icon">⌖</span><span><strong>অবস্থানভিত্তিক অনুসন্ধান</strong><small>রক্তের গ্রুপ ও এলাকা অনুযায়ী</small></span></div>
+<div class="trust-item"><span class="trust-icon">♡</span><span><strong>সম্মতিকে অগ্রাধিকার</strong><small>যোগাযোগের সম্মতি ছাড়া প্রকাশ নয়</small></span></div>
+</div></div>
+<section class="section"><div class="container"><div class="section-head"><span class="kicker">Our Network</span><h2>মানবিক সংযোগের একটি নির্ভরযোগ্য প্ল্যাটফর্ম</h2><p>নেটওয়ার্কের প্রকৃত তথ্য স্বচ্ছভাবে তুলে ধরাই আমাদের অঙ্গীকার।</p></div>
+<div class="stats-grid"><div class="stat-card"><div class="stat-number" id="publicDonorCount">—</div><p>প্রকাশ্যে তালিকাভুক্ত সক্রিয় রক্তদাতা</p></div><div class="stat-card"><div class="stat-number">শীঘ্রই</div><p>সম্পন্ন রক্তদানের পরিসংখ্যান</p></div><div class="stat-card"><div class="stat-number">শীঘ্রই</div><p>সহায়তাপ্রাপ্ত জরুরি অনুরোধ</p></div></div></div></section>
+<section class="section" id="mission"><div class="container"><div class="section-head"><span class="kicker">Mission & Vision</span><h2>আমাদের লক্ষ্য, আমাদের অঙ্গীকার</h2><p>মানবিকতা, স্বচ্ছতা ও প্রযুক্তির সমন্বয়ে রক্তদানের একটি দায়িত্বশীল নেটওয়ার্ক গড়ে তোলা।</p></div>
+<div class="mission-grid">
+<article class="info-card"><div class="mini-icon">🎯</div><h3>আমাদের লক্ষ্য</h3><p>রক্তের প্রয়োজনে থাকা মানুষের সঙ্গে স্বেচ্ছায় রক্তদানে আগ্রহী ব্যক্তিদের দ্রুত, দায়িত্বশীল ও সম্মতিভিত্তিক সংযোগ তৈরি করা।</p></article>
+<article class="info-card"><div class="mini-icon">🌱</div><h3>আমাদের স্বপ্ন</h3><p>এমন একটি সংগঠিত রক্তদাতা নেটওয়ার্ক গড়ে তোলা, যেখানে জরুরি সময়ে মানুষ নির্ভরযোগ্য তথ্য ও সহায়তার পথ খুঁজে পায়।</p></article>
+<article class="info-card"><div class="mini-icon">🤝</div><h3>আমাদের অঙ্গীকার</h3><p>দাতার সম্মতি, ব্যক্তিগত তথ্যের গোপনীয়তা, তথ্য যাচাই এবং জবাবদিহিমূলক ব্যবস্থাপনাকে সর্বোচ্চ গুরুত্ব দেওয়া।</p></article>
+</div></div></section>
+<section class="section search-section" id="search"><div class="container"><div class="section-head"><span class="kicker">Find a Donor</span><h2>আপনার প্রয়োজনীয় রক্তদাতা খুঁজুন</h2><p>রক্তের গ্রুপ ও অবস্থান নির্বাচন করে অনুমোদিত ডোনারদের তালিকা দেখুন।</p></div>
+<div class="search-panel"><form id="donorSearchForm"><div class="search-fields">
+<div class="field"><label for="searchBlood">রক্তের গ্রুপ</label><select id="searchBlood"><option value="">সকল গ্রুপ</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option><option>O+</option><option>O-</option></select></div>
+<div class="field"><label for="searchDistrict">জেলা</label><input id="searchDistrict" placeholder="জেলার নাম"></div>
+<div class="field"><label for="searchUpazila">উপজেলা</label><input id="searchUpazila" placeholder="উপজেলার নাম"></div>
+<button class="btn" id="searchButton" type="submit">অনুসন্ধান করুন →</button>
+</div><p class="helper">শুধু অনুমোদিত, বর্তমানে রক্তদানে আগ্রহী এবং যোগাযোগের সম্মতি দেওয়া ডোনারের তথ্য দেখানো হবে।</p></form>
+<p class="message" id="searchMessage" role="status" aria-live="polite"></p><div class="results" id="searchResults"></div></div></div></section>
+<section class="section section-soft" id="how"><div class="container"><div class="section-head"><span class="kicker">How It Works</span><h2>সহজ তিনটি ধাপে মানবিক সংযোগ</h2><p>প্রযুক্তির সহায়তায় প্রয়োজনীয় তথ্য খুঁজে নিন, দায়িত্বশীলভাবে যোগাযোগ করুন।</p></div>
+<div class="steps-grid"><article class="step-card"><span class="step-num">STEP 01</span><div class="step-icon">⌕</div><h3>রক্তদাতা অনুসন্ধান</h3><p>রক্তের গ্রুপ, জেলা ও উপজেলা দিয়ে আপনার এলাকার উপযুক্ত ডোনার খুঁজুন।</p></article>
+<article class="step-card"><span class="step-num">STEP 02</span><div class="step-icon">✓</div><h3>তথ্য যাচাই করুন</h3><p>ডোনারের সঙ্গে যোগাযোগের আগে তাঁর বর্তমান সম্মতি ও রক্তদানের সক্ষমতা নিশ্চিত করুন।</p></article>
+<article class="step-card"><span class="step-num">STEP 03</span><div class="step-icon">♡</div><h3>মানবিক সহায়তায় যুক্ত হোন</h3><p>রক্তদাতা ও রক্তপ্রার্থীর দায়িত্বশীল যোগাযোগের মাধ্যমে সহায়তার উদ্যোগ নিন।</p></article></div></div></section>
+<section class="section" id="services"><div class="container"><div class="section-head"><span class="kicker">Our Services</span><h2>মানবিক সেবায় আমাদের উদ্যোগ</h2><p>নিরাপদ, সম্মতিভিত্তিক ও সহজ ব্যবহারযোগ্য সেবা গড়ে তোলাই লক্ষ্য।</p></div>
+<div class="services-grid"><article class="service-card"><div class="service-icon">🩸</div><h3>রক্তদাতা অনুসন্ধান</h3><p>রক্তের গ্রুপ ও অবস্থান অনুযায়ী অনুমোদিত ও সম্মতিপ্রাপ্ত ডোনার খুঁজুন।</p><a href="#search">ডোনার খুঁজুন →</a></article>
+<article class="service-card"><div class="service-icon">✚</div><h3>রক্তদাতা নিবন্ধন</h3><p>স্বেচ্ছায় নিবন্ধন করুন। যাচাই ও অনুমোদনের পর সম্মতি অনুযায়ী তালিকাভুক্ত হবেন।</p><a href="#donor-registration">নিবন্ধন করুন →</a></article>
+<article class="service-card"><div class="service-icon">🚨</div><h3>জরুরি রক্তের অনুরোধ</h3><p>জরুরি অনুরোধ ব্যবস্থাপনা ও সমন্বয়ের সুবিধা পরবর্তী পর্যায়ে যুক্ত করা হবে।</p><a href="#donor-registration">নেটওয়ার্কে যুক্ত হোন →</a></article></div></div></section>
+<section class="section"><div class="container"><div class="cta-band"><div><h2>আপনার স্বেচ্ছায় রক্তদান<br>হতে পারে কারও নতুন আশার নাম।</h2><p>আজই রক্তদাতা হিসেবে যুক্ত হয়ে মানবতার পাশে দাঁড়ান।</p></div><a class="btn" href="#donor-registration">রক্তদাতা হিসেবে নিবন্ধন করুন ↗</a></div></div></section>
+<section class="section section-soft" id="campaigns"><div class="container"><div class="section-head"><span class="kicker">Campaigns & Events</span><h2>রক্তদান কর্মসূচি ও ক্যাম্পেইন</h2><p>সচেতনতা, স্বেচ্ছাসেবক অংশগ্রহণ এবং নিরাপদ রক্তদানে উৎসাহিত করতে আমাদের উদ্যোগ।</p></div>
+<div class="mission-grid">
+<article class="campaign-card"><div class="campaign-art">🩸</div><div class="campaign-body"><span class="story-tag">চলমান উদ্যোগ</span><h3>স্বেচ্ছায় রক্তদাতা নিবন্ধন</h3><p>আপনার তথ্য দিয়ে নেটওয়ার্কে যুক্ত হোন। যাচাই শেষে সম্মতি অনুযায়ী তালিকাভুক্ত হবেন।</p><a class="btn" href="#donor-registration" style="margin-top:14px">নিবন্ধন করুন</a></div></article>
+<article class="campaign-card"><div class="campaign-art">🤝</div><div class="campaign-body"><span class="story-tag">কমিউনিটি</span><h3>রক্তদান সচেতনতা</h3><p>রক্তদানের গুরুত্ব, প্রস্তুতি এবং দায়িত্বশীল রক্তদাতা হওয়ার বিষয়ে সচেতনতা ছড়িয়ে দিন।</p></div></article>
+<article class="campaign-card"><div class="campaign-art">📣</div><div class="campaign-body"><span class="story-tag">আপডেট</span><h3>পরবর্তী ক্যাম্পেইন</h3><p>পরবর্তী কর্মসূচির তারিখ ও নিবন্ধন সংক্রান্ত তথ্য এখানে প্রকাশ করা হবে।</p></div></article>
+</div></div></section>
+<section class="section" id="stories"><div class="container"><div class="section-head"><span class="kicker">Impact Stories</span><h2>মানবিকতার গল্প</h2><p>বাস্তব অভিজ্ঞতা ও যাচাইকৃত সাফল্যের গল্প প্রকাশের জন্য এই বিভাগ।</p></div>
+<div class="story-grid"><article class="story-card"><span class="story-tag">সাফল্যের গল্প</span><h3>একটি সংযোগ, নতুন আশার সম্ভাবনা</h3><p>অনুমতি ও তথ্য যাচাই সাপেক্ষে নেটওয়ার্কের বাস্তব সহায়তার গল্প এখানে প্রকাশ করা হবে।</p></article>
+<article class="story-card"><span class="story-tag">স্বেচ্ছাসেবক</span><h3>মানুষের পাশে থাকার অঙ্গীকার</h3><p>স্বেচ্ছাসেবকদের অভিজ্ঞতা ও মানবিক উদ্যোগের গল্প এখানে তুলে ধরা হবে।</p></article>
+<article class="story-card"><span class="story-tag">স্বচ্ছতা</span><h3>তথ্য ও সম্মতির গুরুত্ব</h3><p>ব্যক্তিগত তথ্য প্রকাশের আগে সংশ্লিষ্ট ব্যক্তির স্পষ্ট অনুমতি নেওয়া হবে।</p></article></div></div></section>
+<section class="section section-soft" id="updates"><div class="container"><div class="section-head"><span class="kicker">News & Updates</span><h2>সংবাদ ও আপডেট</h2><p>নেটওয়ার্কের নতুন ফিচার, ঘোষণা ও কার্যক্রমের তথ্য।</p></div>
+<div class="news-grid"><article class="news-card"><span class="news-tag">Platform Update</span><h3>ডিজিটাল ডোনার নেটওয়ার্ক নির্মাণ</h3><p>নিরাপদ নিবন্ধন, যাচাই ও সম্মতিভিত্তিক অনুসন্ধান ব্যবস্থার উন্নয়ন চলছে।</p></article>
+<article class="news-card"><span class="news-tag">Community</span><h3>স্বেচ্ছায় রক্তদাতা হওয়ার আহ্বান</h3><p>যোগ্য ও আগ্রহী ব্যক্তিদের দায়িত্বশীলভাবে নেটওয়ার্কে যুক্ত হওয়ার আমন্ত্রণ।</p></article>
+<article class="news-card"><span class="news-tag">Coming Soon</span><h3>জরুরি আবেদন ব্যবস্থাপনা</h3><p>জরুরি রক্তের আবেদন ও প্রশাসনিক সমন্বয়ের মডিউল পরবর্তী ধাপে যুক্ত হবে।</p></article></div></div></section>
+<section class="section section-soft" id="about"><div class="container about-grid"><div class="about-visual"><span>♥</span></div><div class="about-copy"><span class="kicker">About Anirban</span><h2>প্রযুক্তির মাধ্যমে মানবতার পাশে</h2><p>ANIRBAN BLOOD Network হলো অনির্বাণ ফাউন্ডেশনের একটি মানবিক ডিজিটাল উদ্যোগ। স্বেচ্ছায় রক্তদাতা ও রক্তের প্রয়োজনে থাকা মানুষের মধ্যে দায়িত্বশীল ও নির্ভরযোগ্য সংযোগ গড়ে তোলাই আমাদের লক্ষ্য।</p><p>আমরা তথ্যের গোপনীয়তা, ডোনারের সম্মতি, যাচাই এবং স্বচ্ছ ব্যবস্থাপনাকে গুরুত্ব দিই।</p><div class="values"><div class="value"><b>✓</b> মানবিকতা</div><div class="value"><b>✓</b> স্বচ্ছতা</div><div class="value"><b>✓</b> সম্মতি ও গোপনীয়তা</div><div class="value"><b>✓</b> জবাবদিহিতা</div></div></div></div></section>
+<section class="section" id="faq"><div class="container"><div class="section-head"><span class="kicker">FAQ</span><h2>সাধারণ কিছু প্রশ্ন</h2><p>নেটওয়ার্ক ব্যবহার সম্পর্কে জেনে নিন।</p></div><div class="faq-list">
+<details><summary>নিবন্ধন করলেই কি আমার তথ্য সার্চে দেখা যাবে?</summary><p>না। নিবন্ধনের পর তথ্য যাচাই করা হবে। অনুমোদন এবং প্রকাশ্যে যোগাযোগের সম্মতি থাকলেই নির্দিষ্ট তথ্য সার্চে দেখানো হবে।</p></details>
+<details><summary>আমার ফোন নম্বর কি সবার কাছে প্রকাশিত হবে?</summary><p>শুধু আপনি প্রকাশ্যে যোগাযোগের সম্মতি দিলে এবং আপনার নিবন্ধন অনুমোদিত হলে সার্চে ফোন নম্বর দেখানো হবে।</p></details>
+<details><summary>সার্চে ডোনার না পেলে কী করব?</summary><p>অন্য এলাকা বা রক্তের গ্রুপের তথ্য পুনরায় যাচাই করুন এবং জরুরি চিকিৎসার ক্ষেত্রে হাসপাতাল বা চিকিৎসকের সহায়তা নিন।</p></details>
+</div></div></section>
+<section class="section search-section" id="donor-registration"><div class="container"><div class="section-head"><span class="kicker">Become a Donor</span><h2>রক্তদাতা হিসেবে নিবন্ধন করুন</h2><p>আপনার তথ্য জমা দিন। যাচাই শেষে অনুমোদন ও সম্মতি অনুযায়ী তালিকাভুক্ত করা হবে।</p></div>
+<div class="registration-wrap"><form id="donorRegistrationForm" class="registration-form">
+<div class="field"><label for="full_name">পূর্ণ নাম *</label><input id="full_name" maxlength="100" required placeholder="আপনার নাম"></div>
+<div class="field"><label for="regBlood">রক্তের গ্রুপ *</label><select id="regBlood" required><option value="">নির্বাচন করুন</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option><option>O+</option><option>O-</option></select></div>
+<div class="field"><label for="regDistrict">জেলা *</label><input id="regDistrict" maxlength="80" required placeholder="জেলার নাম"></div>
+<div class="field"><label for="regUpazila">উপজেলা *</label><input id="regUpazila" maxlength="80" required placeholder="উপজেলার নাম"></div>
+<div class="field"><label for="phone">মোবাইল নম্বর *</label><input id="phone" type="tel" inputmode="tel" maxlength="20" required placeholder="01XXXXXXXXX"></div>
+<div class="field"><label for="lastDonation">সর্বশেষ রক্তদানের তারিখ</label><input id="lastDonation" type="date"></div>
+<label class="check-row"><input type="checkbox" id="available" checked><span>বর্তমানে রক্ত দিতে আগ্রহী।</span></label>
+<label class="check-row"><input type="checkbox" id="publicConsent"><span>অনুমোদনের পর আমার নাম, অবস্থান ও মোবাইল নম্বর রক্তপ্রার্থীদের দেখানোর সম্মতি দিচ্ছি।</span></label>
+<label class="check-row"><input type="checkbox" id="dataConsent" required><span>আমার দেওয়া তথ্য সংরক্ষণ ও যাচাই করার অনুমতি দিচ্ছি। *</span></label>
+<button class="btn" id="registrationButton" type="submit">নিবন্ধন জমা দিন →</button><p class="message full" id="registrationMessage" role="status" aria-live="polite"></p>
+</form></div></div></section>
 </main>
-
-<footer>
-  <div class="footer-inner">
-    <div>
-      <h3>ANIRBAN BLOOD Network</h3>
-      <p>রক্তের প্রয়োজনে, মানবতার বন্ধনে।</p>
-      <p>একটি উদ্যোগ — অনির্বাণ ফাউন্ডেশন।</p>
-    </div>
-    <div>
-      <h3>গুরুত্বপূর্ণ লিংক</h3>
-      <a href="#home">হোম</a>
-      <a href="#search">রক্তদাতা খুঁজুন</a>
-      <a href="#register">রক্তদাতা হোন</a>
-    </div>
-    <div>
-      <h3>যোগাযোগ</h3>
-      <a href="mailto:anirbanfoundation91@gmail.com">ইমেইল করুন</a>
-      <a href="https://facebook.com/anirbanfoundation26">Facebook</a>
-      <a href="https://anirbanfoundation.github.io">Foundation Website</a>
-    </div>
-  </div>
-  <div class="copyright">
-    © 2026 ANIRBAN BLOOD Network. All Rights Reserved.
-  </div>
-</footer>
-
-<!-- Supabase Connection -->
+<section class="section section-soft" id="emergency"><div class="container"><div class="section-head"><span class="kicker">Emergency Blood Request</span><h2>জরুরি রক্তের আবেদন</h2><p>জরুরি আবেদন জমা ও সমন্বয়ের মডিউল পরবর্তী উন্নয়ন ধাপে চালু করা হবে।</p><div class="notice-box">এই মুহূর্তে অনলাইনে জরুরি আবেদন গ্রহণ চালু নেই। জরুরি চিকিৎসার ক্ষেত্রে নিকটস্থ হাসপাতাল/চিকিৎসকের সঙ্গে সরাসরি যোগাযোগ করুন।</div></div></div></section>
+<section class="section" id="contact"><div class="container"><div class="section-head"><span class="kicker">Contact Us</span><h2>যোগাযোগ করুন</h2><p>নেটওয়ার্ক, নিবন্ধন বা সহযোগিতা সম্পর্কে জানতে আমাদের সঙ্গে যোগাযোগ করুন।</p></div>
+<div class="contact-grid"><div class="contact-panel"><h3 style="font-size:17px;color:var(--navy);margin-bottom:10px">ANIRBAN BLOOD Network</h3><p style="font-size:12px;color:var(--muted)">পরিচালনায়: অনির্বাণ ফাউন্ডেশন</p><div class="contact-line">✉️ <a href="mailto:anirbanfoundation91@gmail.com">anirbanfoundation91@gmail.com</a></div><div class="contact-line">🌐 <a href="https://anirbanfoundation.github.io" target="_blank" rel="noopener">anirbanfoundation.github.io</a></div><div class="contact-line">📘 <a href="https://facebook.com/anirbanfoundation26" target="_blank" rel="noopener">Facebook Page</a></div></div>
+<div class="contact-panel"><h3 style="font-size:17px;color:var(--navy);margin-bottom:10px">জরুরি প্রয়োজনে</h3><p style="font-size:12px;color:var(--muted)">এই প্ল্যাটফর্ম রক্তদাতা খুঁজে পেতে সহায়তা করে; এটি হাসপাতাল, চিকিৎসক বা জরুরি চিকিৎসাসেবার বিকল্প নয়। রোগীর চিকিৎসা ও রক্ত সঞ্চালনের সিদ্ধান্ত সংশ্লিষ্ট হাসপাতাল/চিকিৎসকের মাধ্যমে নিশ্চিত করুন।</p><div class="notice-box">এই ওয়েবসাইটে প্রদর্শিত দাতার তথ্যও যোগাযোগের আগে পুনরায় যাচাই করতে হবে।</div></div></div></div></section>
+<section class="section section-soft" id="privacy"><div class="container"><div class="section-head"><span class="kicker">Privacy Policy</span><h2>গোপনীয়তা নীতি</h2></div><div class="policy-copy">
+<h3>তথ্য সংগ্রহ</h3><p>নিবন্ধনের সময় ব্যবহারকারীর দেওয়া নাম, রক্তের গ্রুপ, যোগাযোগ নম্বর, অবস্থান এবং রক্তদানের প্রাসঙ্গিক তথ্য সংগ্রহ করা হতে পারে।</p>
+<h3>তথ্য ব্যবহার ও প্রকাশ</h3><p>তথ্য যাচাই, নেটওয়ার্ক পরিচালনা এবং রক্তদাতা-রক্তপ্রার্থীর সংযোগে তথ্য ব্যবহার করা হবে। দাতার স্পষ্ট প্রকাশ-সম্মতি ও প্রশাসনিক অনুমোদন ছাড়া ব্যক্তিগত যোগাযোগের তথ্য পাবলিক সার্চে দেখানো হবে না।</p>
+<h3>তথ্য নিরাপত্তা</h3><p>প্রবেশাধিকার নিয়ন্ত্রণ, ডাটাবেস নীতিমালা এবং প্রশাসনিক যাচাইয়ের মাধ্যমে তথ্য সুরক্ষার চেষ্টা করা হবে। অনলাইনে কোনো ব্যবস্থাই শতভাগ ঝুঁকিমুক্ত নয়।</p>
+<h3>সম্মতি প্রত্যাহার</h3><p>দাতা তার প্রকাশ্য যোগাযোগের সম্মতি বা প্রাপ্যতার অবস্থা পরিবর্তনের অনুরোধ করতে পারবেন। অনুরোধ যাচাই করে যথাযথ ব্যবস্থা নেওয়া হবে।</p>
+</div></div></section>
+<section class="section" id="terms"><div class="container"><div class="section-head"><span class="kicker">Terms & Conditions</span><h2>ব্যবহারের শর্তাবলি</h2></div><div class="policy-copy">
+<h3>সঠিক তথ্য প্রদান</h3><p>ব্যবহারকারীকে সঠিক ও হালনাগাদ তথ্য দিতে হবে। অন্যের পরিচয় ব্যবহার বা বিভ্রান্তিকর তথ্য দেওয়া যাবে না।</p>
+<h3>চিকিৎসা সংক্রান্ত সীমাবদ্ধতা</h3><p>এই প্ল্যাটফর্ম কেবল সংযোগ ও সমন্বয়ে সহায়তা করে। রক্তদানের যোগ্যতা, রক্তের নিরাপত্তা, পরীক্ষা ও সঞ্চালনের সিদ্ধান্ত চিকিৎসক/হাসপাতালের।</p>
+<h3>দায়িত্বশীল যোগাযোগ</h3><p>কোনো দাতার সঙ্গে যোগাযোগের সময় সম্মানজনক আচরণ করতে হবে। দাতার সম্মতি ছাড়া তার তথ্য অন্যত্র ছড়ানো যাবে না।</p>
+<h3>সেবা পরিবর্তন</h3><p>নিরাপত্তা, রক্ষণাবেক্ষণ বা উন্নয়নের প্রয়োজনে প্ল্যাটফর্মের কোনো সুবিধা পরিবর্তিত বা সাময়িকভাবে বন্ধ থাকতে পারে।</p>
+<p><strong>নোট:</strong> এই নীতিমালা প্রাথমিক প্রকাশনা-খসড়া; কার্যক্রম শুরুর আগে আইনগত পর্যালোচনা ও প্রতিষ্ঠানের অনুমোদন প্রয়োজন।</p>
+</div></div></section>
+<footer><div class="container"><div class="footer-grid"><div><div class="footer-brand">ANIRBAN BLOOD Network</div><p>রক্তের প্রয়োজনে, মানবতার বন্ধনে।<br>একটি মানবিক উদ্যোগ — অনির্বাণ ফাউন্ডেশন।</p></div><div><h3>গুরুত্বপূর্ণ লিংক</h3><a href="#search">রক্তদাতা খুঁজুন</a><a href="#donor-registration">রক্তদাতা নিবন্ধন</a><a href="#campaigns">ক্যাম্পেইন</a><a href="#updates">সংবাদ ও আপডেট</a><a href="#about">আমাদের সম্পর্কে</a><a href="#mission">লক্ষ্য ও উদ্দেশ্য</a><a href="#privacy">গোপনীয়তা নীতি</a><a href="#terms">ব্যবহারের শর্ত</a></div><div><h3>যোগাযোগ</h3><a href="mailto:anirbanfoundation91@gmail.com">anirbanfoundation91@gmail.com</a><a href="https://facebook.com/anirbanfoundation26" target="_blank" rel="noopener">Facebook</a><a href="https://anirbanfoundation.github.io" target="_blank" rel="noopener">Foundation Website</a></div></div><div class="footer-bottom"><span>© 2026 ANIRBAN BLOOD Network. All Rights Reserved.</span><span>পরিচালনায়: অনির্বাণ ফাউন্ডেশন</span></div></div></footer>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
 <script>
-  const SUPABASE_URL = "https://txnpsympuzeckcuzqegs.supabase.co";
-  const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_iulVmaeEhi_rtPD9gtsnDg_O8fqve2j";
-  
-  const supabaseClient = window.supabase.createClient(
-    SUPABASE_URL,
-    SUPABASE_PUBLISHABLE_KEY
-  );
+"use strict";
+const nav=document.getElementById("mainNav");
+const menuButton=document.getElementById("menuButton");
+const moreWrap=nav ? nav.querySelector(".nav-more") : null;
+const moreButton=document.getElementById("moreButton");
 
-  console.log("ANIRBAN BLOOD Network: Supabase client initialized");
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("donorRegistrationForm");
-
-  if (!form) return;
-
-  form.addEventListener("submit", async function (event) {
-    event.preventDefault();
-
-    const message = document.getElementById("registrationMessage");
-    const submitButton = form.querySelector('button[type="submit"]');
-
-    const donor = {
-      full_name: document.getElementById("full_name").value.trim(),
-      blood_group: document.getElementById("blood_group").value,
-      district: document.getElementById("district").value.trim(),
-      upazila: document.getElementById("upazila").value.trim(),
-      phone: document.getElementById("phone").value.trim(),
-      last_donation_date:
-        document.getElementById("last_donation_date").value || null,
-      available_to_donate:
-        document.getElementById("available_to_donate").checked,
-      public_contact_consent:
-        document.getElementById("public_contact_consent").checked,
-      consent: document.getElementById("consent").checked,
-      status: "pending"
-    };
-
-    submitButton.disabled = true;
-    message.textContent = "আপনার তথ্য জমা হচ্ছে...";
-
-    try {
-      const { error } = await supabaseClient
-        .from("donors")
-        .insert([donor]);
-
-      if (error) throw error;
-
-      message.textContent =
-        "ধন্যবাদ! আপনার নিবন্ধন জমা হয়েছে। যাচাই শেষে অনুমোদন দেওয়া হবে।";
-
-      form.reset();
-
-    } catch (error) {
-      console.error("Donor registration error:", error);
-      message.textContent =
-        error.code === "23505"
-          ? "এই মোবাইল নম্বর দিয়ে আগে নিবন্ধন করা হয়েছে।"
-          : "দুঃখিত! নিবন্ধন জমা হয়নি। অনুগ্রহ করে আবার চেষ্টা করুন।";
-
-    } finally {
-      submitButton.disabled = false;
+// Navigation is initialized independently so it keeps working even if the
+// Supabase CDN is unavailable or slow on a mobile connection.
+if(nav && menuButton){
+  menuButton.addEventListener("click",function(){
+    const open=nav.classList.toggle("open");
+    this.setAttribute("aria-expanded",String(open));
+    this.setAttribute("aria-label",open?"মেনু বন্ধ করুন":"মেনু খুলুন");
+  });
+  if(moreButton && moreWrap){
+    moreButton.addEventListener("click",function(e){
+      e.stopPropagation();
+      const open=moreWrap.classList.toggle("open");
+      this.setAttribute("aria-expanded",String(open));
+    });
+  }
+  nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{
+    nav.classList.remove("open");
+    if(moreWrap) moreWrap.classList.remove("open");
+    menuButton.setAttribute("aria-expanded","false");
+    menuButton.setAttribute("aria-label","মেনু খুলুন");
+    if(moreButton) moreButton.setAttribute("aria-expanded","false");
+  }));
+  document.addEventListener("click",e=>{
+    if(moreWrap && !moreWrap.contains(e.target)){
+      moreWrap.classList.remove("open");
+      if(moreButton) moreButton.setAttribute("aria-expanded","false");
     }
   });
+  document.addEventListener("keydown",e=>{
+    if(e.key==="Escape"){
+      nav.classList.remove("open");
+      if(moreWrap) moreWrap.classList.remove("open");
+      menuButton.setAttribute("aria-expanded","false");
+      menuButton.setAttribute("aria-label","মেনু খুলুন");
+      if(moreButton) moreButton.setAttribute("aria-expanded","false");
+    }
+  });
+}
+
+const SUPABASE_URL="https://txnpsympuzeckcuzqegs.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY="sb_publishable_iulVmaeEhi_rtPD9gtsnDg_O8fqve2j";
+const supabaseClient=(window.supabase && window.supabase.createClient)
+  ? window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY)
+  : null;
+function message(el,text,isError=false){el.textContent=text;el.style.color=isError?"#b42318":"#167447";}
+function escapeHtml(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+async function loadDonorCount(){const el=document.getElementById("publicDonorCount");try{if(!supabaseClient) throw new Error("Database library unavailable");const {count,error}=await supabaseClient.from("public_donor_search").select("*",{count:"exact",head:true});if(error)throw error;el.textContent=new Intl.NumberFormat("bn-BD").format(count||0);}catch(e){console.error("Donor count:",e);el.textContent="—";}}
+document.getElementById("donorSearchForm").addEventListener("submit",async e=>{
+e.preventDefault();const msg=document.getElementById("searchMessage"),out=document.getElementById("searchResults"),btn=document.getElementById("searchButton");out.innerHTML="";message(msg,"অনুসন্ধান চলছে...");btn.disabled=true;
+try{let q=supabaseClient.from("public_donor_search").select("full_name,blood_group,district,upazila,phone").limit(50);
+const blood=document.getElementById("searchBlood").value,district=document.getElementById("searchDistrict").value.trim(),upazila=document.getElementById("searchUpazila").value.trim();
+if(blood)q=q.eq("blood_group",blood);if(district)q=q.ilike("district",district);if(upazila)q=q.ilike("upazila",upazila);
+const {data,error}=await q.order("full_name",{ascending:true});if(error)throw error;
+if(!data||!data.length){message(msg,"এই শর্তে কোনো অনুমোদিত ও সম্মতিপ্রাপ্ত রক্তদাতা পাওয়া যায়নি।");return;}
+message(msg,"মোট "+new Intl.NumberFormat("bn-BD").format(data.length)+" জন ডোনার পাওয়া গেছে। যোগাযোগের আগে বর্তমান সম্মতি ও সক্ষমতা নিশ্চিত করুন।");
+out.innerHTML=data.map(d=>{const tel=String(d.phone||"").replace(/[^\d+]/g,"");return `<article class="result-card"><div class="result-top"><span class="blood-pill">${escapeHtml(d.blood_group)}</span></div><h3>${escapeHtml(d.full_name)}</h3><p>জেলা: ${escapeHtml(d.district)}</p><p>উপজেলা: ${escapeHtml(d.upazila)}</p><a href="tel:${escapeHtml(tel)}">ফোন করুন: ${escapeHtml(d.phone)}</a></article>`;}).join("");
+}catch(err){console.error("Search:",err);message(msg,"এই মুহূর্তে অনুসন্ধান সম্পন্ন করা যাচ্ছে না। পরে আবার চেষ্টা করুন।",true);}finally{btn.disabled=false;}
 });
+document.getElementById("donorRegistrationForm").addEventListener("submit",async e=>{
+e.preventDefault();const form=e.currentTarget,msg=document.getElementById("registrationMessage"),btn=document.getElementById("registrationButton");
+const phone=document.getElementById("phone").value.trim().replace(/[\s-]/g,"");
+if(!/^(\+?8801|01)[3-9]\d{8}$/.test(phone)){message(msg,"সঠিক বাংলাদেশি মোবাইল নম্বর লিখুন। উদাহরণ: 01XXXXXXXXX",true);return;}
+const donor={full_name:document.getElementById("full_name").value.trim(),blood_group:document.getElementById("regBlood").value,district:document.getElementById("regDistrict").value.trim(),upazila:document.getElementById("regUpazila").value.trim(),phone,last_donation_date:document.getElementById("lastDonation").value||null,available_to_donate:document.getElementById("available").checked,public_contact_consent:document.getElementById("publicConsent").checked,consent:document.getElementById("dataConsent").checked,status:"pending"};
+btn.disabled=true;message(msg,"আপনার তথ্য জমা হচ্ছে...");
+try{const {error}=await supabaseClient.from("donors").insert([donor]);if(error)throw error;message(msg,"ধন্যবাদ! আপনার নিবন্ধন জমা হয়েছে। যাচাই ও অনুমোদনের পর সম্মতি অনুযায়ী তথ্য সার্চে দেখা যাবে।");form.reset();}
+catch(err){console.error("Registration:",err);let text="দুঃখিত! নিবন্ধন জমা হয়নি। অনুগ্রহ করে আবার চেষ্টা করুন।";if(err.code==="23505")text="এই মোবাইল নম্বর দিয়ে আগে নিবন্ধন করা হয়েছে।";if(err.code==="42501")text="নিবন্ধনের অনুমতি পাওয়া যায়নি। পরিচালকের সঙ্গে যোগাযোগ করুন।";message(msg,text,true);}
+finally{btn.disabled=false;}
+});
+loadDonorCount();
 </script>
 </body>
 </html>
